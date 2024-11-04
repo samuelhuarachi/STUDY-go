@@ -1,0 +1,92 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+	"math"
+)
+
+type person struct {
+	name string
+	age int
+}
+
+func main() {
+	// p := person{name: "Jake", age: 23}
+
+	println(my_name)
+
+	x := 1
+	y := 2
+	sum := x + y
+
+	if sum > 6 {
+		fmt.Println("More than 6")
+	} else if sum < 6 && sum > 4 {
+		fmt.Println("Less than 6")
+	} else {
+		fmt.Println("Nenhuma das condições")
+	}
+
+	a := []int{1,2,3,4,5}
+	a = append(a, 6)
+	
+	fmt.Println(a)
+
+	vertices := make(map[string]int)
+	
+	vertices["triangle"] = 3
+	vertices["square"] = 4
+	vertices["dodecagon"] = 12
+
+	delete(vertices, "square")
+
+	fmt.Println(vertices)
+
+	for i := 0; i <5; i++ {
+		fmt.Println(i)
+	}
+
+	b := 11
+	for b < 20 && b > 10 {
+		fmt.Println(b)
+		b++
+	}
+
+	arr := []string{"a", "b", "c"}
+
+	for index, value := range arr {
+		fmt.Println("index", index, "value", value)
+	}
+
+
+	m := make(map[string]string)
+	m["a"] = "alpha"
+	m["b"] = "beta"
+
+	for key, value := range m {
+		fmt.Println("key:", key, "value:", value)
+	}
+
+	result, err := sqrt(-16)
+
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(result)
+	}
+
+	
+}
+
+func sum(x int, y int) int {
+	return x + y
+}
+
+func sqrt(x float64) (float64, error) {
+	if x < 0 {
+		return 0, errors.New("Undefined for negative numbers")
+	}
+
+	return math.Sqrt(x), nil
+}
