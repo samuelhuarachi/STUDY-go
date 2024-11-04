@@ -1,4 +1,6 @@
 go mod init [project name]
 GOOS=windows go build
-
 go run [file name / hello.go]
+
+
+
